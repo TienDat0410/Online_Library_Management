@@ -15,12 +15,12 @@ module.exports={
     }*/
     create: (data, callback)=>{
         db.query(
-            'INSERT INTO taikhoan(MaTK, UserName,PassWord,Quyen) values(?,?,?,?)',
+            'INSERT INTO taikhoan(MaTK, UserName,PassWord) values(?,?,?)',
             [
                 data.MaTK,
                 data.UserName,
                 data.PassWord,
-                data.Quyen,
+               
             ],
             
                  (error,result,fields) =>{
@@ -56,12 +56,11 @@ module.exports={
     },
     updateUser: (data, callBack) => {
         db.query
-        ('update taikhoan set  UserName=?, PassWord = ?, Quyen =? where MaTK =?',
+        ('update taikhoan set  UserName=?, PassWord = ?where MaTK =?',
         [
           //  data.MaTK,
             data.UserName,
-            data.PassWord,
-            data.Quyen,
+            data.PassWord,           
             data.MaTK                    
         ],
         (error, results, fields) => {
